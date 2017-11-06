@@ -31,8 +31,8 @@ module.exports = app => {
     app.get('/alimentos/:descricao', (req, res) => {
         
         let array = BufferHelper.toJson(alimentos).filter(alimento => {
-            let descricao = req.params.descricao.toLowerCase().splite(' ');
-            return alimento.descricao.toLowerCase().includes(descricao);
+            // let descricao = req.params.descricao.toLowerCase().splite(' ');
+            return alimento.descricao.toLowerCase().includes(req.params.descricao.toLowerCase());
         });
 
         if (array.length !== 0) res.json(array);
