@@ -17,10 +17,22 @@ module.exports = app => {
     })
 
     //Rota por ID
-    app.get('/alimentos/:id', (req, res) => {
+    // app.get('/alimentos/:id', (req, res) => {
 
-        let array = BufferHelper.toJson(alimentos).filter(categoria => {
-            return categoria._id == req.params.id;
+    //     let array = BufferHelper.toJson(alimentos).filter(categoria => {
+    //         return categoria._id == req.params.id;
+    //     });
+
+    //     if (array.length !== 0) res.json(array);
+    //     else res.status(404).json({ erro: "Alimento não encontrado" })
+    // })
+
+    //Rota por descrição
+    app.get('/alimentos/:descricao', (req, res) => {
+        
+        let array = BufferHelper.toJson(alimentos).filter(alimento => {
+            let descricao = req.params.descricao.toLowerCase().splite(' ');
+            return alimento.descricao.toLowerCase().includes(descricao);
         });
 
         if (array.length !== 0) res.json(array);

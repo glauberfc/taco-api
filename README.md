@@ -50,7 +50,15 @@ All the informations used in this application was picked on oficial XLS Database
 
 |   Method      |       URL                                                 | Response  |
 |   ---         |                       ---                                 | ---       |
-|   GET         |   https://taco-alimentos.herokuapp.com/alimentos/{id}      | Food      |
+|   GET         |   https://taco-alimentos.herokuapp.com/alimentos/{id}     | Food      |
+
+---
+
+> Consult food by description
+
+|   Method      |       URL                                                         | Response  |
+|   ---         |                       ---                                         | ---       |
+|   GET         |   https://taco-alimentos.herokuapp.com/alimentos/{descricao}      | Food      |
 
 ---
 
